@@ -1,0 +1,31 @@
+[
+
+    {
+        "auto_van_de_week": "Mercedes GL 350 CDI Bluetec 4 Matic"
+    },
+
+    {
+        "naam": "Mercedes GL 350 CDI Bluetec 4 Matic",
+        "beschrijving": "Diesel, trekhaak elec., roofrail, getinte ramen",
+        "prijs": "€ 33.950,-",
+
+        "kenmerken": {
+            "Bouwjaar": "2015",
+            "Kilometerstand": "495.699 KM"
+        }
+
+    },
+
+    {
+        "naam": "Audi A7 55 TFSI",
+        "beschrijving": "Benzine 21' inch velgen zwart/zwart",
+        "prijs": "verkocht",
+
+        "kenmerken": {
+            "Bouwjaar": "2018",
+            "Kilometerstand": "87.255 KM"
+        }
+
+    }
+
+]

@@ -1,0 +1,524 @@
+:root{
+
+    --main: brown;
+    --text: white;
+    --second-text: black;
+    --toned-text: rgb(240, 240, 240);
+
+}
+
+* {
+
+    box-sizing: border-box;
+
+    margin: 0;
+    padding: 0;
+
+    font-family: Arial, Helvetica, sans-serif;
+
+}
+
+html {
+
+    scroll-behavior: smooth;
+
+}
+
+
+nav {
+
+    position: fixed;
+
+    background-color: var(--main);
+    box-shadow: rgba(0, 0, 0, 0.417) 0px 2px 8px 0px;
+    height: 4.75rem;
+    width: 100%;
+
+    z-index: 3;
+
+}
+
+.normale-menu{
+
+    margin: 0 auto;
+
+    display: flex;
+    justify-content: space-evenly;
+    align-items: center;
+
+    height: 100%;
+    width: 55%;
+
+    padding-right: 4rem;
+
+
+}
+
+nav li{
+
+    
+    list-style-type: none;
+    text-align: center;
+
+}
+
+nav a{
+
+    color: var(--toned-text);
+    text-decoration: none;
+
+    font-size: larger;
+    text-align: center;
+
+}
+
+nav h1{
+
+    color: var(--text);
+    font-size: x-large;
+
+    text-align: center;
+
+}
+
+.telefoon-titel{
+
+    display: none;
+
+}
+
+.telefoon-menu{
+
+    display: none;
+
+    justify-content: space-between;
+    align-items: center;
+    gap: 60px;
+
+}
+
+.open-menu{
+
+    display: none;
+    user-select: none;
+    cursor: pointer;
+
+}
+
+.lijn{
+
+    display: block;
+    width: 25px;
+    height: 3px;
+    margin: 5px;
+    -webkit-transition: all .3s ease-in-out;
+    transition: all .3s ease-in-out;
+    background-color: white;
+
+}
+
+.auto-van-de-week{
+
+    background-image:
+    linear-gradient(to bottom, rgba(0, 0, 0, 0.679), rgba(0, 0, 0, 0.785)),
+    url('plaatjes/Autos.jpg');
+    background-repeat: no-repeat;
+    background-size: cover;
+    background-position: 0 35%;
+
+    margin: 0 auto;
+
+    display: flex;
+    justify-content: center;
+    align-items: center;
+
+    height: 56rem;
+    
+}
+
+.auto-van-de-week .titel{
+
+    text-align: center;
+
+    font-size: 2.4rem;
+    padding-top: 4rem;
+    padding-bottom: 1.5rem;
+
+    color: var(--text);
+
+}
+
+.auto-van-de-week-container{
+
+    margin: 0 auto;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+
+}
+
+.auto{
+
+    box-shadow: rgba(99, 99, 99, 0.177) 0px 2px 8px 0px;
+    background-color: rgb(255, 255, 255);
+    width: 24rem;
+    height: fit-content;
+
+}
+
+.auto-informatie{
+
+    margin: 0 auto;
+
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+
+    width: 81%;
+
+    color: var(--second-text);
+
+}
+
+.auto-informatie .titel-beschrijving .auto-titel{
+
+    padding-top: 1.5rem;
+    padding-bottom: 1vh;
+    
+}
+
+.auto-informatie .titel-beschrijving .auto-prijs{
+
+    padding-bottom: 1.75vh;
+
+}
+
+.auto-informatie .titel-beschrijving .auto-prijs.verkocht{
+
+    display: none;
+
+}
+
+.auto-informatie .titel-beschrijving p{
+
+    font-size: large;
+
+}
+
+.auto-informatie .titel-beschrijving ul{
+
+    color: var(--second-text);
+    padding-top: 1.5vh;
+
+}
+
+.auto-informatie .titel-beschrijving li{
+
+    font-size: large;
+    list-style-type: none;
+
+}
+
+.auto-contact{
+
+    margin: 0 auto;
+
+    display: flex;
+    justify-content: center;
+    align-items: center;
+
+    width: 82%;
+    height: 3rem;
+
+    border: none;
+
+    color: var(--text);
+    background-color: var(--main);
+
+    font-size: x-large;
+    font-weight: bold;
+
+    cursor: pointer;
+
+}
+
+.auto-contact.verkocht{
+
+    cursor: auto;
+
+}
+
+.ruimte{
+
+    height: 2rem;
+
+}
+
+.slideshow-img {
+    
+    display:none; 
+    width: 100%;
+
+}
+
+.slideshow {
+    width: 100%;
+    position: relative;
+    margin: auto;
+}
+
+.prev, .next {
+    cursor: pointer;
+    position: absolute;
+    top: 50%;
+    width: auto;
+    padding: 16px;
+    margin-top: -22px;
+    color: rgb(255, 255, 255);
+    font-weight: bold;
+    font-size: 18px;
+    transition: 0.3s ease;
+    border-radius: 0 3px 3px 0;
+    user-select: none;
+}
+
+.next {
+    right: 0;
+    border-radius: 3px 0 0 3px;
+}
+
+.prev:hover, .next:hover {
+    background-color: rgba(0,0,0,0.8);
+}
+
+.dot {
+    cursor:pointer;
+    height: 14px;
+    width: 14px;
+    margin: 0 2.5px;
+    background-color: #bbb;
+    border-radius: 50%;
+    display: inline-block;
+    transition: background-color 0.1s ease;
+}
+
+.active, .dot:hover {
+    background-color: #f44336;
+}
+
+.occasions-sectie{
+
+    background-color: rgb(252, 252, 252);
+
+}
+
+.occasions-sectie .titel{
+
+    text-align: center;
+
+    font-size: 3rem;
+    padding-top: 3rem;
+    padding-bottom: 3rem;
+
+    color: var(--main);
+
+}
+
+.occasions-sectie .occasions-container{
+
+    margin: 0 auto;
+
+    display: grid;
+    justify-content: center;
+    grid-template-columns: repeat(auto-fill, 24rem);
+    grid-template-rows: repeat(auto-fill, 42rem);
+
+    gap: 2rem;
+
+}
+
+footer {
+
+    margin: 0 auto;
+
+    display: flex;
+    justify-content: center;
+    align-items: center;
+
+    background-color: brown;
+    box-shadow: rgba(0, 0, 0, 0.597) 0px 2px 8px 0px;
+    height: 7vh;
+
+}
+
+.copyright{
+
+    color: var(--toned-text);
+    font-size: large;
+    text-align: center;
+
+}
+
+@media only screen and (max-width: 1600px) {
+
+    .normale-menu{
+
+        width: 75%;
+
+    }
+
+}
+
+@media only screen and (max-width: 1200px) {
+    
+    .normale-menu{
+
+        width: 90%;
+
+    }
+
+}
+
+@media only screen and (max-width: 1000px) {
+    
+    .normale-menu{
+
+        width: 100%;
+
+    }
+
+}
+
+@media only screen and (max-width: 915px) {
+
+    .normale-menu{
+
+        width: 90%;
+
+    }
+
+    nav ul li a{
+
+        font-size: 1rem;
+
+    }
+
+    nav h1{
+
+        font-size: large;
+
+    }
+
+}
+
+@media only screen and (max-width: 768px) {
+
+    /* hamburger menu here */
+    
+    /* GARAGE KONAK  --- */ 
+    
+    /* design ^ */
+
+    .auto{
+
+        width: 20rem;
+
+    }
+
+    .auto-van-de-week .titel{
+
+        font-size: 1.9rem;
+
+    }
+
+    .occasions-sectie .occasions-container{
+
+        grid-template-columns: repeat(auto-fill, 20rem);
+        grid-template-rows: repeat(auto-fill, 40rem);
+
+    }
+
+    .menu{
+
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        padding: 0 24px;
+
+    }
+
+    .normale-menu{
+
+        display: none;
+
+    }
+
+    .telefoon-titel{
+
+        display: block;
+        text-align: left;
+        width: 60rem;
+
+    }
+
+    .telefoon-menu{
+        
+        display: block;
+        
+        position: fixed;
+        top: 75px;
+        right: .5px;
+        left: -100%;
+        flex-direction: column;
+        background-color: var(--main);
+        width: 100%;
+        text-align: center;
+        transition: .3s ease-in-out;
+
+    }
+
+    .telefoon-menu li{
+
+        padding: 1.5rem;
+        box-shadow: inset rgba(87, 3, 3, 0.229) 0px 2px 10px 0px;
+        background-color: rgb(132, 34, 34);
+
+    }
+
+    .telefoon-menu a{
+
+        font-size: larger !important;
+
+    }
+
+    .telefoon-menu.telefoon{
+
+        left: 0;
+
+    }
+
+    .open-menu{
+
+        display: block;
+
+    }
+
+    .open-menu.telefoon .lijn:nth-child(2){
+
+        opacity: 0;
+
+    }
+    
+    .open-menu.telefoon .lijn:nth-child(1){
+
+        transform: translateY(8px) rotate(45deg);
+
+    }
+
+    .open-menu.telefoon .lijn:nth-child(3){
+
+        transform: translateY(-8px) rotate(-45deg);
+
+    }
+
+}

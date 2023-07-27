@@ -1,0 +1,107 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Garage Konak</title>
+    <link rel="icon" type="image/x-icon" href="/favicon.ico">
+
+    <link rel="stylesheet" href="/styles.css">
+</head>
+<body>
+    
+    <nav class="menu">
+        <ul class="normale-menu">
+            <li><a class="menu-link" href="#occasions">Occasions</a></li>
+            <li><a class="menu-link" href="#">Banden / Velgen</a></li>
+
+            <h1><a class="menu-link" href="#">GARAGE KONAK</a></h1>
+
+            <li><a class="menu-link" href="#">Ons Bedrijf</a></li>
+            <li><a class="menu-link" href="#">Contact</a></li>
+        </ul>
+
+        <h1 class="telefoon-titel"><a href="#">GARAGE KONAK</a></h1>
+        <ul class="telefoon-menu">
+            <li><a class="menu-link" href="#occasions">Occasions</a></li>
+            <li><a class="menu-link" href="#">Banden / Velgen</a></li>
+            <li><a class="menu-link" href="#">Ons Bedrijf</a></li>
+            <li><a class="menu-link" href="#">Contact</a></li>
+        </ul>
+
+        <div class="open-menu">
+            <div class="lijn"></div>
+            <div class="lijn"></div>
+            <div class="lijn"></div>
+        </div>
+    </nav>
+
+    <!-- AUTO VAN DE WEEK -->
+
+    <section class="auto-van-de-week">
+
+        <div class="container">
+
+            <h1 class="titel">AUTO VAN DE WEEK</h1>
+
+            <div class="auto-van-de-week-container" data-avdw-container>
+
+                <template data-template>
+    
+                    <div class="auto">
+    
+                        <div class="slideshow">
+                            <div class="container" data-plaatjes></div>
+                            <br>
+                            <div class="dots" style="text-align:center" data-dots></div>
+                        </div>
+            
+                        <div class="auto-informatie">
+            
+                            <div class="titel-beschrijving">
+                                <h1 data-model class="auto-titel"></h1>
+                                <h1 data-prijs class="auto-prijs"></h1>
+                                <p data-beschrijving></p>
+                                <ul data-kenmerken></ul>
+                            </div>
+            
+                        </div>
+            
+                        <div class="ruimte"></div>
+            
+                        <!-- every auto-contact check if textcontent is contact, only then send to contact -->
+                        <button class="auto-contact" data-auto-contact>Contact</button> 
+            
+                        <div class="ruimte"></div>
+            
+                    </div>
+    
+                </template>
+    
+            </div>
+
+        </div>
+
+    </section>
+
+    <!-- ALLE OCCASIONS -->
+
+    <section id="occasions" class="occasions-sectie">
+
+        <h1 class="titel">Occasions</h1>
+
+        <div class="occasions-container" data-occ-container></div>
+
+        <div class="ruimte"></div>
+
+    </section>
+
+    <footer>
+        <p class="copyright"> Copyright &copy; <script>document.write(new Date().getFullYear())</script> Garage Konak</p>
+    </footer>
+
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.4/jquery.min.js"></script>
+    <script src="/systeem.js"></script>
+
+</body>
+</html>
