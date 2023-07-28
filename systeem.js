@@ -76,38 +76,80 @@ function fetch_from_json(){
                             });
     
                             var folder = `plaatjes/${other_item.naam.toLowerCase()}`;
-            
                             var plaatje_index = 1;
-                            $.ajax({
-                                url : folder,
-                                success: function (data) {
-                                    $(data).find("a").attr("href", function (i, val) {
-                                        if( val.match(/\.(jpe?g|png|gif)$/) ) { 
-                                            $(plaatjes_container).append( "<img class='slideshow-img' src='" + val +"'>" );
+
+                            var xhr = new XMLHttpRequest();
+                            xhr.open("GET", folder, true);
+                            xhr.responseType = 'document';
+                            xhr.onload = () => {
+                                if (xhr.status === 200) {
+                                    console.log(xhr.response)
+                                  var elements = xhr.response.getElementsByTagName("a");
+                                  console.log(elements)
+                                  for (x of elements) {
+                                    if ( x.href.match(/\.(jpe?g|png|gif)$/) ) { 
+                                        let img = document.createElement("img");
+                                        img.src = x.href;
+                                        img.classList.add("slideshow-img")
+                                        plaatjes_container.append(img)
+
+                                        const dot = document.createElement("span")
             
-                                            const dot = document.createElement("span")
-            
-                                            console.log("appending")
-            
-                                            if (plaatje_index === 1) {
-            
-                                                dot.className = "dot active"
-            
-                                            } else {
-            
-                                                dot.classList.add("dot")
-            
-                                            }
-            
-                                            dot.setAttribute("onclick", `currentDiv(${plaatje_index},0)`)
-                                            $(dots_container).append(dot)
-            
-                                            plaatje_index++;
-            
-                                        } 
-                                    });
+                                        console.log("appending")
+        
+                                        if (plaatje_index === 1) {
+        
+                                            dot.className = "dot active"
+        
+                                        } else {
+        
+                                            dot.classList.add("dot")
+        
+                                        }
+        
+                                        dot.setAttribute("onclick", `currentDiv(${plaatje_index},0)`)
+                                        $(dots_container).append(dot)
+        
+                                        plaatje_index++;
+                                    } 
+                                  };
+                                } 
+                                else {
+                                  alert('Request failed. Returned status of ' + xhr.status);
                                 }
-                            });
+                              }
+                              xhr.send()
+
+                            // $.ajax({
+                            //     url : folder,
+                            //     success: function (data) {
+                            //         $(data).find("a").attr("href", function (i, val) {
+                            //             if( val.match(/\.(jpe?g|png|gif)$/) ) { 
+                            //                 $(plaatjes_container).append( "<img class='slideshow-img' src='" + val +"'>" );
+            
+                            //                 const dot = document.createElement("span")
+            
+                            //                 console.log("appending")
+            
+                            //                 if (plaatje_index === 1) {
+            
+                            //                     dot.className = "dot active"
+            
+                            //                 } else {
+            
+                            //                     dot.classList.add("dot")
+            
+                            //                 }
+            
+                            //                 dot.setAttribute("onclick", `currentDiv(${plaatje_index},0)`)
+                            //                 $(dots_container).append(dot)
+            
+                            //                 plaatje_index++;
+            
+                            //             } 
+                            //         });
+                            //     }
+                            // });
             
                             AVDW_Container.append(card)
     
@@ -160,38 +202,49 @@ function fetch_from_json(){
                 });
 
                 var folder = `plaatjes/${item.naam.toLowerCase()}`;
-
                 var plaatje_index = 1;
-                $.ajax({
-                    url : folder,
-                    success: function (data) {
-                        $(data).find("a").attr("href", function (i, val) {
-                            if( val.match(/\.(jpe?g|png|gif)$/) ) { 
-                                $(plaatjes_container).append( "<img class='slideshow-img' src='" + val +"'>" );
 
-                                const dot = document.createElement("span")
+                var xhr = new XMLHttpRequest();
+                xhr.open("GET", folder, true);
+                xhr.responseType = 'document';
+                xhr.onload = () => {
+                    if (xhr.status === 200) {
+                        console.log(xhr.response)
+                        var elements = xhr.response.getElementsByTagName("a");
+                        console.log(elements)
+                        for (x of elements) {
+                        if ( x.href.match(/\.(jpe?g|png|gif)$/) ) { 
+                            let img = document.createElement("img");
+                            img.src = x.href;
+                            img.classList.add("slideshow-img")
+                            plaatjes_container.append(img)
 
-                                console.log("appending")
+                            const dot = document.createElement("span")
 
-                                if (plaatje_index === 1) {
+                            console.log("appending")
 
-                                    dot.className = "dot active"
+                            if (plaatje_index === 1) {
 
-                                } else {
+                                dot.className = "dot active"
 
-                                    dot.classList.add("dot")
+                            } else {
 
-                                }
+                                dot.classList.add("dot")
 
-                                dot.setAttribute("onclick", `currentDiv(${plaatje_index},0)`)
-                                $(dots_container).append(dot)
+                            }
 
-                                plaatje_index++;
+                            dot.setAttribute("onclick", `currentDiv(${plaatje_index},0)`)
+                            $(dots_container).append(dot)
 
-                            } 
-                        });
+                            plaatje_index++;
+                        } 
+                      };
+                    } 
+                    else {
+                        alert('Request failed. Returned status of ' + xhr.status);
                     }
-                });
+                }
+                xhr.send()
 
                 Occ_Container.append(card)
 
